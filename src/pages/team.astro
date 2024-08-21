@@ -1,0 +1,44 @@
+---
+import ContactUs from '../components/ContactUs';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="The Team"
+	description="Introduction to the Tengdu team"
+	pubDate={new Date('April 26 2024')}
+>
+              
+	<article class="yStack margin-bottom-4">
+		<h3>Sesar Hersisson</h3>
+		<h5>Co-founder</h5>
+		<p>
+			Sesar is not just a great software developer but also an accomplished snowboarder who has been hitting the slopes since he was just eight years old. When he's not shredding the powder or working on Tengdu, Sesar likes to challenge himself on the basketball court.
+			<br><br>
+			He also loves to travel and has lived and studied in both Alaska and South Korea.
+		</p>
+		<img class="profile-picture align-self-center" src="/sesar.png" alt="Image of Sesar Hersisson">
+	</article>
+
+	<article class="yStack margin-bottom-4">
+		<h3>Luke Hening</h3>
+		<h5>Co-founder</h5>
+		<p>
+			Having lived in 5 cities over the 8 years, Luke knows how important it is to have a good social network - and how difficult it can be to build. After nearly a decade building great products he’s decided to build his own.
+			<br><br>
+			When he’s not working on Tengdu he loves spending quality time with his son, keeping fit and nerding out over board games.
+		</p>
+		<img class="profile-picture align-self-center" src="/luke.png" alt="Image of Luke Hening">
+	</article>
+<ContactUs />
+
+</div>
+</section>
+</Layout>
+
+<style>
+	.profile-picture {
+		max-width: 400px;
+	}
+
+</style>

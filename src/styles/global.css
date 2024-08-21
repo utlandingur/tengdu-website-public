@@ -1,0 +1,312 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --accent: #2337ff;
+  --accent-dark: #000d8a;
+  --gray: 238, 238, 238;
+  --gray-light: 238, 238, 238;
+  --gray-dark: 34, 41, 57;
+  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
+    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --black: #3c3632;
+  --white: #fff;
+  --green: #44a751;
+  --purple: #ac99ff;
+  --primaryBackground: #44a751;
+  --primaryColor: #fff;
+  --secondaryBackground: #506553;
+  --secondaryColor: #fff;
+  --tertiaryBackground: #fff;
+  --tertiaryColor: #3c3632;
+  --dangerBackground: #ee0b0b;
+  --dangerColor: #fff;
+  --placeholder: #eee;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/fonts/nunito-sans/NunitoSans.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito ExtraLight"), local("Nunito-ExtraLight"),
+    url("/fonts/nunito/Nunito-ExtraLight.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito ExtraLight Italic"), local("Nunito-ExtraLightItalic"),
+    url("/fonts/nunito/Nunito-ExtraLightItalic.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito Regular"), local("Nunito-Regular"),
+    url("/fonts/nunito/Nunito-Regular.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito Black"), local("Nunito-Black"),
+    url("/fonts/nunito/Nunito-Black.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito Bold"), local("Nunito-Bold"),
+    url("/fonts/nunito/Nunito-Bold.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+font-face {
+  font-family: "Nunito";
+  src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"),
+    url("/fonts/nunito/Nunito-ExtraBold.woff2") format("woff2"),
+    url("/fonts/nunito/Nunito-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+iconify-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  background-size: 100% 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: rgb(var(--gray-dark));
+  font-size: 20px;
+  line-height: 1.7;
+}
+main {
+  margin: auto;
+  padding: 3em 1rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--black));
+  line-height: 1.2;
+}
+h1 {
+  font-size: 3.052rem;
+
+  font-family: "Nunito Sans";
+  font-weight: 900;
+
+  @media screen and (max-width: 720px) {
+    font-size: 900;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 2.3rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+strong,
+b {
+  font-weight: 700;
+}
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--black);
+}
+p {
+  margin-bottom: 1rem;
+}
+.prose p {
+  margin-bottom: 2rem;
+}
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+input {
+  font-size: 16px;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+code {
+  padding: 2px 5px;
+  background-color: rgb(var(--gray-light));
+  border-radius: 2px;
+}
+pre {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+pre > code {
+  all: unset;
+}
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 0 0 0 20px;
+  margin: 0px;
+  font-size: 1.333rem;
+}
+hr {
+  border: none;
+  border-top: 1px solid rgb(var(--gray-light));
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.bolder {
+  font-weight: 900;
+}
+
+.secondary-background {
+  background-color: var(--secondaryBackground);
+}
+
+.primary-background {
+  background-color: var(--primaryBackground);
+}
+
+.centred-text {
+  text-align: center;
+}
+
+.xStack {
+  display: flex;
+  flex-direction: row;
+}
+
+.yStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-centred {
+  align-items: center;
+  justify-content: center;
+}
+
+.white-text {
+  color: var(--white);
+}
+
+.black-text {
+  color: var(--black);
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4rem;
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}

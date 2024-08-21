@@ -1,0 +1,76 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/header/Header";
+import Footer from "../components/Footer.astro";
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  FRIENDS_LAUGHING,
+  AVAILABILITY,
+  SAFETY,
+} from "../consts";
+import Hero from "../components/Hero";
+import { LandingPageSection } from "../components/LandingPageSection";
+import { LandingPageBenefit } from "../components/LandingPageBenefit";
+import { RegisterButton } from "../components/downloadButtons";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <main class="p-0">
+      <Hero client:load />
+      <div
+        class="pl-6 pr-6 pt-16 pb-16 flex flex-col items-center gap-16 max-w-3xl mx-auto"
+      >
+        <section class="flex flex-col gap-12" aria-label="Product Overview">
+          <LandingPageSection
+            title="Make Genuine Connections"
+            content="Automatically match with like-minded individuals based on shared interests, location, and availability. Form meaningful friendships without the superficial swiping."
+            image={FRIENDS_LAUGHING}
+            client:load
+          />
+          <LandingPageSection
+            title="Simplify Meeting Up"
+            content="Coordinate meet-ups with friends who share your free time. No more hassle of conflicting schedules – just easy, stress-free planning."
+            image={AVAILABILITY}
+            client:load
+          />
+          <LandingPageSection
+            title="Feel Safe"
+            content="We take your safety seriously. You can easily report and unmatch users to ensure your comfort and peace of mind."
+            image={SAFETY}
+            client:load
+          />
+        </section>
+        <section class="flex flex-col gap-4" aria-label="Product Benefits">
+          <h2 class="text-4xl font-nunito-sans font-black">Why Use Tengdu</h2>
+          <LandingPageBenefit
+            title="No Swiping"
+            content="We automatically find you potential friends based on shared interests, location, and availability."
+            iconIdentifier="material-symbols--electric-bolt-rounded"
+          />
+          <LandingPageBenefit
+            title="Group Matching"
+            content="We connect you with 1-4 people like you to help you find your community sooner."
+            iconIdentifier="material-symbols--groups"
+          />
+          <LandingPageBenefit
+            title="Dating-free zone"
+            content="If you’re looking for a date, you’ve come to the wrong place. We are strictly for platonic relationships."
+            iconIdentifier="material-symbols--heart-broken-rounded"
+          />
+        </section>
+
+        <div class="flex flex-col items-center">
+          <RegisterButton />
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
